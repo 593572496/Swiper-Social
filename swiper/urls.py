@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from user.views import get_verify_code, login, get_profile, modify_profile, upload_avatar
+from social.views import get_users, like, superlike, dislike, rewind
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -24,4 +25,10 @@ urlpatterns = [
     path('user/profile/', get_profile),
     path('user/modify_profile/', modify_profile),
     path('user/upload_avatar/', upload_avatar),
+
+    path('social/users/', get_users),
+    path('social/like/', like),
+    path('social/superlike/', superlike),
+    path('social/dislike/', dislike),
+    path('social/rewind/', rewind),
 ]
