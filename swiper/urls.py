@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from user.views import get_verify_code, login, get_profile, modify_profile, upload_avatar
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('user/verify_code/', get_verify_code),
+    path('user/login/', login),
+    path('user/profile/', get_profile),
+    path('user/modify_profile/', modify_profile),
+    path('user/upload_avatar/', upload_avatar),
 ]
